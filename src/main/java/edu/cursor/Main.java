@@ -11,10 +11,10 @@ public class Main {
         System.out.println("Today we will analyze the song: Guns N' Roses - \"Get in the Ring\"\n");
 
         AllWordsCounter.allWordsCounter();
-        System.out.println("Total words in text of the song is " +findingText.size()+"\n");
+        System.out.println("Total words in text of the song is " + findingText.size() + "\n");
 
         UnnecessaryWordsCounter.searchUnnecessaryWords();
-        System.out.println("The count of unnecessary words(swearing and words less than 4 letters) is: "+ unnecessaryWords.size()+"\n");
+        System.out.println("The count of unnecessary words(swearing and words less than 4 letters) is: " + unnecessaryWords.size() + "\n");
 
         System.out.println("The most popular words (there are more than 5 times:");
         PopularWords.countPopularWords();
