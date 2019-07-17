@@ -5,7 +5,7 @@ import java.util.List;
 
 public class UnnecessaryWordsCounter extends AllWordsCounter {
 
-    public static List<String> swearing = new ArrayList<>();
+    private static List<String> swearing = new ArrayList<>();
     public static List<String> unnecessaryWords = new ArrayList<>();
 
     public static void searchUnnecessaryWords() {
@@ -21,16 +21,17 @@ public class UnnecessaryWordsCounter extends AllWordsCounter {
         swearing.add("poop");
         swearing.add("whore");
 
-        for (int i = 0; i < findingText.size(); i++) {
-            if (findingText.get(i).length() <= 3) {
-                unnecessaryWords.add(findingText.get(i));
+        for (String s : findingText) {
+            if (s.length() <= 3) {
+                unnecessaryWords.add(s);
             }
         }
-        for (int i = 0; i < findingText.size(); i++) {
-            for (int j = 0; j < swearing.size(); j++) {
-                if (findingText.get(i).length() > 3) {
-                    if (findingText.get(i).substring(0, 3).equals(swearing.get(j).substring(0, 3))) {
-                        unnecessaryWords.add(findingText.get(i));
+
+        for (String s : findingText) {
+            for (String value : swearing) {
+                if (s.length() > 3) {
+                    if (s.substring(0, 3).equals(value.substring(0, 3))) {
+                        unnecessaryWords.add(s);
                     }
                 }
             }
